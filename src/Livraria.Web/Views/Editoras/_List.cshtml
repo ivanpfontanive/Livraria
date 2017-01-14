@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Livraria.Web.Models.Editoras.EditoraVm>
+@{
+    Layout = null;
+}
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Resources.ResLabel.lblNome
+            </th>
+            <th class="text-right">
+                @Resources.ResLabel.btnAcoes
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var autor in Model)
+            {
+            <tr>
+                <td class="">
+                    @autor.Nome
+                </td>
+                <td class="text-right">
+                    <button class="btnEditar btn btn-default btn-xs" data-id="@autor.Id"><span class="glyphicon glyphicon-edit"></span></button> &nbsp;&nbsp;&nbsp;&nbsp;
+                    <button class="btnDeletar btn btn-danger btn-xs" data-id="@autor.Id"><span class="glyphicon glyphicon-remove "></span></button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
